@@ -6,7 +6,7 @@
       <span class="text_secondary text_s"
         >{{ getProductsCount }} товар{{ suff }}</span
       >
-      <span class="text_s">{{ getTotalPrice }} ₽</span>
+      <span class="text_s">{{ getTotalPrice.toLocaleString("ru") }} ₽</span>
     </div>
   </div>
 </template>

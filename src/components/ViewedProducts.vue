@@ -3,12 +3,12 @@
     <div class="viewed__header">
       <h2>Просмотренные товары</h2>
       <div class="viewed__header__pagination">
-        <button class="button"><i class="left"></i></button>
+        <button class="button prev"><i class="left"></i></button>
         <div class="text_pages">
           <span class="current-page">{{ pagesIndex }} </span>
           <span class="text_secondary text_m"> / {{ pagesCount }}</span>
         </div>
-        <button class="button"><i class="right"></i></button>
+        <button class="button next"><i class="right"></i></button>
       </div>
     </div>
     <div
