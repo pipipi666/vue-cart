@@ -34,11 +34,11 @@ export default {
 <style scoped lang="scss">
 .extra {
   margin-top: 25px;
-  height: 102px;
+  min-height: 102px;
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 0 40px 0 25px;
+  padding: 28px 40px 25px;
   .extra__checkbox {
     height: 20px;
     width: 20px;

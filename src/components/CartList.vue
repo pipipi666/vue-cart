@@ -21,6 +21,9 @@ export default {
 <style scoped lang="scss">
 .list {
   margin-top: 50px;
+  li {
+    height: fit-content;
+  }
 }
 hr {
   margin: 20px 0;

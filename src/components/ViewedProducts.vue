@@ -5,7 +5,7 @@
       <div class="viewed__header__pagination">
         <button class="button prev"><i class="left"></i></button>
         <div class="text_pages">
-          <span class="current-page">{{ pagesIndex }} </span>
+          <span class="current-page">{{ pagesIndex }}</span>
           <span class="text_secondary text_m"> / {{ pagesCount }}</span>
         </div>
         <button class="button next"><i class="right"></i></button>
@@ -106,6 +106,18 @@ export default {
         font-size: 24px;
       }
     }
+  }
+}
+@media screen and (max-width: 1400px) {
+  .viewed__header .viewed__header__pagination {
+    display: none;
+  }
+  .swiper-wrapper {
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
 </style>

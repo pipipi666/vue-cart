@@ -59,10 +59,17 @@ button {
 }
 h1 {
   font-size: 44px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 34px;
+  }
 }
 
 h2 {
   font-size: 30px;
+  @media screen and (max-width: 992px) {
+    font-size: 24px;
+  }
 }
 
 h3 {
@@ -75,6 +82,7 @@ h3 {
 
 .text_s {
   font-size: 12px;
+  line-height: 18px;
 }
 
 .text_m {
@@ -100,6 +108,7 @@ h3 {
 #app {
   font-family: Lato, Avenir, Helvetica, Arial, sans-serif;
   font-size: 14px;
+  line-height: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;

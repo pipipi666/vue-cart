@@ -29,6 +29,11 @@ export default {
   .cart-main__list {
     flex: 1;
   }
+
+  @media screen and (max-width: 1400px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .message {
   margin-top: 30px;

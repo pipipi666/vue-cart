@@ -2,15 +2,17 @@
   <div class="card">
     <img class="card__image" :src="getImgUrl(item.image)" />
     <div class="card__info">
-      <span class="text_m text_b">{{ item.category }} {{ item.model }}</span>
-      <span class="text_s"
+      <span class="item_name text_m text_b"
+        >{{ item.category }} {{ item.model }}</span
+      >
+      <span class="description text_s"
         >{{ item.characteristics.squareMin }}-{{
           item.characteristics.squareMax
         }}/{{ item.characteristics.circulation }} м<sup><small>3</small></sup
         >/ч / {{ item.characteristics.isGidro && "Гидрорегулируемый расход" }} /
         {{ item.characteristics.isSensor && "От датчика присутствия" }}</span
       >
-      <span class="text_secondary">Артикул: {{ item.code }}</span>
+      <span class="item_code text_secondary">Артикул: {{ item.code }}</span>
     </div>
     <div class="card__calc">
       <main-button
@@ -84,11 +86,11 @@ export default {
 <style scoped lang="scss">
 .card {
   margin-top: 25px;
-  height: 120px;
   display: flex;
   align-items: center;
   padding: 0 6px 20px 15px;
   gap: 30px;
+  min-height: 120px;
   .card__image {
     width: 100px;
     height: 100px;
@@ -100,6 +102,18 @@ export default {
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
+    .item_name {
+      height: 23px;
+      overflow: hidden;
+    }
+    .description {
+      height: 36px;
+      overflow: hidden;
+    }
+    .item_code {
+      height: 21px;
+      overflow: hidden;
+    }
   }
   .card__calc {
     display: flex;
@@ -151,6 +165,9 @@ export default {
     &:after {
       transform: rotate(-45deg);
     }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
   }
 }
 </style>

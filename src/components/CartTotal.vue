@@ -15,7 +15,7 @@
       <li class="total__list__item">
         <span>Установка</span
         ><span class="text_numeric">
-          {{ getInstallation ? getInstallationPrice : "Нет" }}</span
+          {{ getInstallation ? `${getInstallationPrice} ₽` : "Нет" }}</span
         >
       </li>
     </ul>
@@ -61,6 +61,7 @@ export default {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
   .total__list {
     margin: 30px 0;
     display: flex;
@@ -78,6 +79,10 @@ export default {
     align-items: flex-end;
     .total__result_sum {
       font-size: 26px;
+
+      @media screen and (max-width: 992px) {
+        font-size: 20px;
+      }
     }
   }
   .button_accent {

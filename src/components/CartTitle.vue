@@ -41,5 +41,13 @@ export default {
       justify-content: flex-end;
     }
   }
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    .cart-title__info {
+      width: 100%;
+    }
+  }
 }
 </style>
