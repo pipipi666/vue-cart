@@ -36,6 +36,7 @@ export default {
   --secondary-color: #797b86;
   --bg-frame: #f6f8fa;
   --accent-color: #0069b4;
+  --page-color: #90a2b5;
 }
 
 * {

@@ -26,7 +26,7 @@
         >{{ getTotalPrice.toLocaleString("ru") }} ₽</span
       >
     </div>
-    <main-button btnType="button_accent" class="text_l"
+    <main-button :onClick="fetchOrder" btnType="button_accent" class="text_l"
       >Оформить заказ</main-button
     >
     <main-button btnType="button_default" class="text_l"
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import MainButton from "./MainButton.vue";
 export default {
   components: { MainButton },
@@ -48,6 +48,9 @@ export default {
     "getInstallation",
     "getInstallationPrice",
   ]),
+  methods: {
+    ...mapActions(["fetchOrder"]),
+  },
 };
 </script>
 

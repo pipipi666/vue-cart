@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    userId: "id",
     installationPrice: 2000,
     euroCoef: 78.29,
     cartProducts: [products[0], products[1], products[2]],
@@ -20,7 +21,7 @@ export default new Vuex.Store({
     getCartProducts(state) {
       return state.cartProducts;
     },
-    getViewedProduct(state) {
+    getViewedProducts(state) {
       return state.viewedProduct;
     },
     getInstallation(state) {
@@ -78,6 +79,23 @@ export default new Vuex.Store({
       state.cartProducts = [];
     },
   },
-  actions: {},
+  actions: {
+    fetchOrder({ state }) {
+      const products = state.cartProducts.map((item) => {
+        return {
+          id: item.id,
+          quantity: item.quantity,
+        };
+      });
+      const request = {
+        ...state.userId,
+        products,
+      };
+      return fetch("https://example.com", {
+        method: "POST",
+        body: JSON.stringify(request),
+      }).catch((err) => console.error(err));
+    },
+  },
   modules: {},
 });
