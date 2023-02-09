@@ -68,7 +68,7 @@ export default {
 
 <style scoped lang="scss">
 .viewed__header {
-  margin-top: 95px;
+  margin: 95px 0 47px;
   display: flex;
   justify-content: space-between;
   .viewed__header__pagination {
@@ -90,6 +90,7 @@ export default {
       .right {
         transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
+        margin-right: 5px;
       }
 
       .left {
