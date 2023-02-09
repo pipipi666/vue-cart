@@ -1,0 +1,45 @@
+<template>
+  <div class="cart-title">
+    <h1>Ваша корзина</h1>
+    <div v-show="getProductsCount" class="cart-title__info">
+      <span class="text_secondary text_l">4 товара</span>
+      <main-button
+        btnType="button_secondary"
+        class="cart-title__info__button text_secondary"
+        :onClick="clearCart"
+        >Очистить корзину</main-button
+      >
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapGetters, mapMutations } from "vuex";
+import MainButton from "./MainButton.vue";
+export default {
+  components: { MainButton },
+  name: "CartTitle",
+  computed: mapGetters(["getProductsCount"]),
+  methods: {
+    ...mapMutations(["clearCart"]),
+  },
+};
+</script>
+
+<style scoped lang="scss">
+.cart-title {
+  margin-top: 60px;
+  width: 800px;
+  display: flex;
+  align-items: flex-end;
+  gap: 22px;
+  .cart-title__info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    .cart-title__info__button {
+      justify-content: flex-end;
+    }
+  }
+}
+</style>
