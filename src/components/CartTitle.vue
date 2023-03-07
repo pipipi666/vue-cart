@@ -2,7 +2,9 @@
   <div class="cart-title">
     <h1>Ваша корзина</h1>
     <div v-show="getProductsCount" class="cart-title__info">
-      <span class="text_secondary text_l">4 товара</span>
+      <span class="text_secondary text_l"
+        >{{ getProductsCount }} товар{{ suff }}</span
+      >
       <main-button
         btnType="button_secondary"
         class="cart-title__info__button text_secondary"
@@ -15,11 +17,17 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import { getSuff } from "../utils/utils.js";
 import MainButton from "./MainButton.vue";
 export default {
   components: { MainButton },
   name: "CartTitle",
-  computed: mapGetters(["getProductsCount"]),
+  computed: {
+    ...mapGetters(["getProductsCount"]),
+    suff() {
+      return getSuff(this.getProductsCount);
+    },
+  },
   methods: {
     ...mapMutations(["clearCart"]),
   },

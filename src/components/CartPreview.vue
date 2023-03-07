@@ -13,20 +13,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { getSuff } from "../utils/utils.js";
 export default {
   name: "CartPreview",
   computed: {
     ...mapGetters(["getProductsCount", "getTotalPrice"]),
     suff() {
-      const s =
-        this.getProductsCount % 10 > 4 ||
-        !(this.getProductsCount % 10) ||
-        (this.getProductsCount > 10 && this.getProductsCount < 15)
-          ? "ов"
-          : this.getProductsCount % 10 === 1
-          ? ""
-          : "а";
-      return s;
+      return getSuff(this.getProductsCount);
     },
   },
 };
